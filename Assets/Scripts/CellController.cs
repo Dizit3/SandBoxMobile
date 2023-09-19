@@ -7,20 +7,28 @@ public class CellController : MonoBehaviour
 
     [SerializeField] private GameObject cellContent;
 
+    public event Action OnCellOpen;
 
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        PlayerController player = other.GetComponent<PlayerController>();
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 
         if (player != null && player.HasKey(cellProperties.requiredKeyID))
         {
             OpenCell();
         }
+
     }
+
+
 
     private void OpenCell()
     {
-        throw new NotImplementedException();
+        transform.DetachChildren();
+
+        OnCellOpen?.Invoke();
+
+        Destroy(gameObject);
+
     }
 }
