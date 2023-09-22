@@ -17,7 +17,6 @@ public class CellController : MonoBehaviour
         {
             OpenCell();
         }
-
     }
 
 
@@ -29,6 +28,5 @@ public class CellController : MonoBehaviour
         OnCellOpen?.Invoke();
 
         Destroy(gameObject);
-
     }
 }
