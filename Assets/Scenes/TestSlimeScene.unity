@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 707886588}
   - component: {fileID: 707886589}
   - component: {fileID: 707886587}
+  - component: {fileID: 707886590}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -639,6 +640,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab49761d494fcc24788e8c9c6a4a1ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &707886590
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707886582}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &755035675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1071,7 @@ GameObject:
   - component: {fileID: 1723897862}
   m_Layer: 0
   m_Name: GridPoints
-  m_TagString: Untagged
+  m_TagString: PlayerGrid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1092,13 +1109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec76a568a9a4e14586d53a689c6e375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPositions:
-  - {fileID: 1252463141}
-  - {fileID: 1056831761}
-  - {fileID: 1580306454}
-  - {fileID: 1565401277}
-  - {fileID: 679189177}
-  - {fileID: 27010591}
 --- !u!1 &1902556149
 GameObject:
   m_ObjectHideFlags: 0

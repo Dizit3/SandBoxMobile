@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class CapturedBeast : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField] private GridPoints grid;
+    private GridPoints grid;
 
     private GameObject target;
 
@@ -12,6 +13,7 @@ public class CapturedBeast : MonoBehaviour
     private void Awake()
     {
         transform.GetComponentInParent<CellController>().OnCellOpen += CellOpenHandler;
+        grid = GameObject.FindGameObjectWithTag("PlayerGrid").GetComponent<GridPoints>();
     }
 
     private void CellOpenHandler()
@@ -24,7 +26,7 @@ public class CapturedBeast : MonoBehaviour
 
     private void Update()
     {
-        if (agent != null)
+        if (agent != null && target != null)
         {
             agent.SetDestination(target.transform.position);
         }

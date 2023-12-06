@@ -1,17 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridPoints : MonoBehaviour
 {
-    [SerializeField] private UnitPos[] unitPositions;
 
     public GameObject AddFolower()
     {
-        foreach (var pos in unitPositions)
+        foreach (Transform position in transform)
         {
-            if (pos.isEmpty == true)
+            if (position.GetComponent<UnitPos>().isEmpty == true)
             {
-                pos.isEmpty = false;
-                return pos.gameObject;
+                position.GetComponent<UnitPos>().isEmpty = false;
+                return position.gameObject;
             }
         }
         return null;
